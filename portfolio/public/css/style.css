@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    /* color: #170; */
+    font-size: 1.6rem;
+}
+
+h1{ color: red; }
+
+
+div#content_card{ 
+    width: 500px;
+    height: 150px;
+    border:1px solid black;
+}
+div#card_photo{ 
+    float: left;
+    width: 200px;
+    height: 150px;
+    border:1px solid black; 
+}
+div#content_header{ 
+    float: right;
+    width: 295px;
+    height: 40px;
+    border:1px solid black; 
+}
+
+div#content_info{ 
+    float: right;
+    width: 295px;
+    height: 25px;
+    border:1px solid black; 
+}
+
+div#content_info .content_auther{ 
+    float: left;
+    /* width: 295px; */
+    /* height: 25px; */
+    border:1px solid black; 
+}
+
+div#content_info .content_create_datetime{ 
+    float: right;
+    /* width: 295px; */
+    /* height: 25px; */
+    border:1px solid black; 
+}
+
+div#content_part{ 
+    float: right;
+    width: 295px;
+    height: 80px;
+    border:1px solid black; 
+}
