@@ -37,14 +37,16 @@ class PostController extends Controller
     public function article_regist(Request $request)
     {
         $post_data = $request::all();
-        echo $post_data['regist_title'];
-        echo $post_data['regist_content'];
+        // echo $post_data['regist_title'];
+        // echo $post_data['regist_content'];
 
         // データ登録処理
         $articles = new \App\Article();
         $articles->title_name = $post_data['regist_title'];
         $articles->article = $post_data['regist_content'];
         $articles->save();
+
+        return view('postComplete');
         //return view('content_regist');
     }
 

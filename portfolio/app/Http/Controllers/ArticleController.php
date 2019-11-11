@@ -10,7 +10,7 @@ class ArticleController extends Controller
     public function listView()
     {
         // 記事一覧
-        $articles = \App\Article::paginate(10);
+        $articles = \App\Article::orderBy('id', 'DESC')->paginate(10);
         return view('articleList',compact('articles'));
     }
 
