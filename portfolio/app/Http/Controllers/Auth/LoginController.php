@@ -31,7 +31,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected $redirectTo = '/home';
+    protected $redirectTo = '/article/list';
 
     public function login(Request $request)
     {
@@ -56,7 +57,8 @@ class LoginController extends Controller
         $this->guard()->logout();
         $request->session()->invalidate();
 
-        return redirect('/home');
+        //return redirect('/home');
+        return redirect('/article/list');
     }
 
     /**
