@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -11,7 +12,9 @@ class ArticleController extends Controller
     {
         // 記事一覧
         $articles = \App\Article::orderBy('id', 'DESC')->paginate(10);
-        return view('articleList',compact('articles'));
+        // 現在認証されているユーザーの取得
+        $user = Auth::user();
+        return view('articleList',compact('articles','user'));
     }
 
     /**
@@ -23,6 +26,8 @@ class ArticleController extends Controller
     {
         // 記事詳細一覧
         $article_data = \App\Article::where('id', '=', $id)->get();
-        return view('articleDetail',compact('article_data'));
+        // 現在認証されているユーザーの取得
+        $user = Auth::user();
+        return view('articleDetail',compact('article_data','user'));
     }
 }

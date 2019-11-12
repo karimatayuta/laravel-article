@@ -7,11 +7,12 @@
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="navbar-nav"><h2 class="text-white"><a class="nav-link" href="/">Home</a></h2></div>
+    <div class="navbar-nav"><h2 class="text-white"><a class="nav-link" href="/article/list">Home</a></h2></div>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="/post">Post</a></li>
-            <li class="nav-item"><a class="nav-link" href="/article/list">Article</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">My Page</a></li>
+            <!-- <li class="nav-item"><a class="nav-link" href="/post">Post</a></li> -->
+            <!-- <li class="nav-item"><a class="nav-link" href="/article/list">Article</a></li> -->
+            <!-- <li class="nav-item"><a class="nav-link" href="#">My Page</a></li> -->
+            <li class="nav-item"><a class="nav-link" href="/post">{{ $user['name'] }}</a></li>
         </ul>
 </nav>
 

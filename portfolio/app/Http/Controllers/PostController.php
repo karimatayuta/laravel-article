@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -13,8 +14,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
-        return view('post');
+        // 新規記事投稿　ページ
+        // 現在認証されているユーザーの取得
+        $user = Auth::user();        
+        return view('post',compact('user'));
     }
 
     /**
@@ -24,9 +27,11 @@ class PostController extends Controller
      */
     public function create(Request $request)
     {
-        //
+        // 新規記事投稿　確認ページ
         $post_data = $request::all();
-        return view('postCreate',compact('post_data'));
+        // 現在認証されているユーザーの取得
+        $user = Auth::user();  
+        return view('postCreate',compact('post_data','user'));
     }
 
     /**
@@ -40,13 +45,17 @@ class PostController extends Controller
         // echo $post_data['regist_title'];
         // echo $post_data['regist_content'];
 
+        // 新規記事投稿　完了ページ
         // データ登録処理
         $articles = new \App\Article();
         $articles->title_name = $post_data['regist_title'];
         $articles->article = $post_data['regist_content'];
         $articles->save();
 
-        return view('postComplete');
+        // 現在認証されているユーザーの取得
+        $user = Auth::user();  
+
+        return view('postComplete',compact('user'));
         //return view('content_regist');
     }
 
