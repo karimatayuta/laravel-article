@@ -34,6 +34,9 @@ Route::get('/article/list','ArticleController@listView');
 // 記事詳細ページ表示
 Route::get('/article/detail/{id}','ArticleController@detailView');
 
-Auth::routes();
+// ユーザーページ
+Route::get('/user','UserController@index');
 
+// ログイン認証
+Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

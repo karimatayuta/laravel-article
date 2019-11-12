@@ -42,8 +42,6 @@ class PostController extends Controller
     public function article_regist(Request $request)
     {
         $post_data = $request::all();
-        // echo $post_data['regist_title'];
-        // echo $post_data['regist_content'];
 
         // 新規記事投稿　完了ページ
         // データ登録処理

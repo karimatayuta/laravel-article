@@ -8,32 +8,29 @@
     </div>
 </div><br>
 
-
 <div class="container">
     <div class="row">
-        <table class="table table-hover col-sm-12">
-            <thead class="table-danger text-secondary">
-                <tr>
-                    <th>記事ID</th>
-                    <th scope="col">タイトル</th>
-                    <!-- <th scope="col">作成者</th> -->
-                    <th scope="col">投稿日時</th>
-                </tr>
-            </thead>
-            @foreach ($articles as $article)
-            <tbody class="text-secondary">
-                <tr>
-                    <th scope="row">{{ $article['id'] }}</th>
-                    <td><a href="{{ action('ArticleController@detailView', $article['id']) }}">{{ $article['title_name'] }}</a></td>
-                    <!-- <td><a href="#">UserName</a></td> -->
-                    <td>{{ $article['created_at'] }}</a></td>
-                </tr>
-            </tbody>
-            @endforeach
-        </table>        
-        {{ $articles->links() }}
+    @foreach ($articles as $article)
+        <div class="card col-sm-3">
+        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+            <div class="card-body">
+                <h4 class="card-title">{{ $article['title_name'] }}</h4>
+                <p class="card-text">{{ $article['created_at'] }}</p>
+                <a href="{{ action('ArticleController@detailView', $article['id']) }}" class="btn btn-primary float-right">記事はこちら</a>
+            </div>
+        </div>
+
+        <div class="col-sm-1"></div>
+    @endforeach
+
+    <!-- {{ $articles->links() }} -->
     </div>
 </div>
 
-
+<br>
+<div class="container">
+    <div class="row">
+        {{ $articles->links() }}
+    </div>
+</div>
 @endsection

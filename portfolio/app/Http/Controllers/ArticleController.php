@@ -11,7 +11,7 @@ class ArticleController extends Controller
     public function listView()
     {
         // 記事一覧
-        $articles = \App\Article::orderBy('id', 'DESC')->paginate(10);
+        $articles = \App\Article::orderBy('id', 'DESC')->paginate(9);
         // 現在認証されているユーザーの取得
         $user = Auth::user();
         return view('articleList',compact('articles','user'));

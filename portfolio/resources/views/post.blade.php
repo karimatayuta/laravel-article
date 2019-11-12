@@ -17,7 +17,7 @@
     <div class="container">
         <div class="form-group form-group-sm row">
             <label class="col-sm-0 control-label" for="sm">タイトル：</label>
-            <div class="col-sm-4"><input class="form-control" type="text" name="title"></div>
+            <div class="col-sm-8"><input class="form-control" type="text" name="title"></div>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
     <div class="container">
         <div class="form-group form-group-sm row">
             <label class="col-sm-0 control-label" for="sm">記事内容：</label>
-            <div class="col-sm-4"><textarea class="form-control" rows="10" name="content"></textarea></div>
+            <div class="col-sm-8"><textarea class="form-control" rows="10" name="content"></textarea></div>
         </div>
     </div>
     <br>
