@@ -33,7 +33,7 @@
                     <td>{{ $article['id'] }}</td>
                     <td><a href="{{ action('ArticleController@detailView', $article['id']) }}">{{ $article['title_name'] }}</a></td>
                     <td>{{ $article['created_at'] }}</a></td>
-                    <td><a class="btn btn-warning text-white" href="#" rule="button">Update</button></td>
+                    <td><a href="{{ action('UpdateController@input', $article['id']) }}" class="btn btn-warning text-white" rule="button">Update</button></td>
                     <td><a class="btn btn-danger" href="#" rule="button">Delete</button></td>
                 </tr>
             </tbody>

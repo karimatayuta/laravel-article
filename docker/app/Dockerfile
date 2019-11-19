@@ -11,4 +11,6 @@ RUN yum -y install epel-release \
 php-opcache php-devel php-mbstring php-mcrypt php-mysqlnd php-phpunit-PHPUnit \
 php-pecl-xdebug php-gd php-intl php-symfony php-pdo php-xml php-tokenizer php-pear php-zip
 
-ENTRYPOINT ["/usr/sbin/httpd", "-DFOREGROUND"]
+ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+# CMD ["echo", "ServerName localhost:80", "<<", "/usr/sbin/httpd/httpd.conf"]
+# RUN echo "ServerName localhost" | tee /etc/httpd/conf/httpd.conf
